@@ -6,7 +6,7 @@
 library(tidyverse) # load our packages here
 
 # Import data
-data <- read.csv("Data/height.csv")
+data <- read.csv("/Users/Ari/StatsI_Fall2022/tutorials/tutorial01/data/height.csv")
 
 # Explore data
 summary(data)
@@ -72,23 +72,37 @@ data$sex_f <- as.factor(data$sex) # Convert to factor
 levels(data$sex_f) <- c("M", "F") # Change the levels
 head(data) # Check our result
 
+#understanding the mean (Ari tutorial week 2)
+mean(data$height)
+#conditioning mean (Ari tutorial week 2) (fun means function) (~ mostly used for regression and means depends on)
+
 aggregate(data$height, by = list(data$sex_f), FUN = mean) # Base R grouping
 aggregate(height ~ sex_f, data = data, FUN = mean) # Does the same using a formula
 
-data %>% # Tidyverse method for grouping
+data %>% # Tidyverse method for grouping (%>% "calculation", this function 
+  # used mostly by tidyverse and seems to be seemed as easier?)
   group_by(sex_f) %>%
   summarise(mean = mean(height))
 
 # Visualise
-boxplot(data$height ~ data$sex_f, # here we use formula notation to group
+boxplot(data$height ~ data$sex_f, # here we use formula notation to group (boxplot a way of showing distribution of continuous variables)
         main = "Boxplot of Height by Sex",
         ylab = "cm",
         xlab = "")
+?boxplot
+
+
+
 # By looking at the boxplot, what might we conclude?
+  ##comments on the visualization: no overlatp between the boxes, skewed M more to the left,  
+  #and the medicam between them it is not overlapping so we can deduct there are two different distributions 
 
 # Formulate our null hypothesis:
 # What is our null hypothesis? 
-# Where do we set alpha? (i.e. rejecting null hypothesis when we shouldn't; 
+    ##The null hypothesis is that there is no different, we can reject the null hypothesis. 
+
+# Where do we set alpha? (alpha= how far accros do we need our mean to be? and setting the probability of error) 
+  #(i.e. rejecting null hypothesis when we shouldn't; "means would be a type 1 error"
 # note that we don't get to decide beta - i.e. the probability of incorrectly 
 # accepting the null hypothesis)
 # Is a one-tail or two-tail test more appropriate?
@@ -104,8 +118,20 @@ var.test(height ~ sex_f,
 # Now we run our t test
 t.test(height ~ sex_f, # Use formula to group
        data = data,
-       mu = 0, # The default (null) is zero
-       var.equal = FALSE, # The default is FALSE
+       mu = 0, # The default (null) is zero {ari notes: this is the mean}
+       var.equal = FALSE, # The default is FALSE; if data has the same varience we use TRUE, we can use "Var.test()" to check if the varience is the same
+       #Ari notes: less varience between M and F and we can use the function to check the varience 
        alternative = "greater", # Try changing this to "two.sided"
        conf.level = .95) # Try changing this critical value
+
+# Now we run our t test
+t.test(height ~ sex_f, # Use formula to group
+       data = data,
+       mu = 0, # The default (null) is zero {ari notes: this is the mean}
+       var.equal = FALSE, # The default is FALSE; if data has the same varience we use TRUE, we can use "Var.test()" to check if the varience is the same
+       #Ari notes: less varience between M and F and we can use the function to check the varience 
+       alternative = "two.sided", # Try changing this to "two.sided"
+       conf.level = .95) # Try changing this critical value
+
+#the two sided equals to 18.668169 other than the "Inf" for infinit. 
 # How do we interpret the output? (Hint: looking back at the boxplot can help)
