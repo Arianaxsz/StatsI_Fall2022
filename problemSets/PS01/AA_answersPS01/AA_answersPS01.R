@@ -1,7 +1,7 @@
 #####################
 # load libraries
 library(tidyverse)
-
+library(ggplot2)
 # set wd
 # clear global .envir
 #####################
@@ -90,12 +90,19 @@ t.test(y,
 #####################
 
 expenditure <- read.table("~/Documents/GitHub/StatsI_Fall2022/datasets/expenditure.txt", header=T)
-data("expenditure")
+data(expenditure)
 View(expenditure)
 
 #plot(expenditure$Y, expenditure$X1, expenditure$X2, expenditure$X3)
 ggplot( data = expenditure, aes(x = , y = x1)) + 
   geom_point()
+
+# create scatterplot of Y and X1 
+###NOTE we can use pair () function to add all the graphs together in the same page; 
+
+ggplot(data = expenditure, aes(x = X1, y = Y)) + 
+  geom_point() 
+
 
 #Trying with the 4 variables
 ggplot(data = expenditure, aes(x = "expenditure$X11", y = "expenditure$Y"))
@@ -108,3 +115,5 @@ ggplot(data = expenditure, aes(x = "expenditure$X11", y = "expenditure$Y"))
   state_plot + 
     geom_line(aes(color = State))  
 It is not working! :(
+
+?
