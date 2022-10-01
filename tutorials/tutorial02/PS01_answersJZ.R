@@ -46,6 +46,8 @@ n <- length(y)
 # Problem 2
 #####################
 
+## using pairs() for the correlations 
+
 # read in expenditure data
 expenditure <- read.table("https://raw.githubusercontent.com/ASDS-TCD/StatsI_Fall2022/main/datasets/expenditure.txt", header=T)
 

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.14)  1 OCT 2022 18:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.14)  1 OCT 2022 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**PS01_answersJZ.tex
-(./PS01_answersJZ.tex
+**AA_PS01_final.tex
+(./AA_PS01_final.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -832,8 +832,8 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count338
 \l__pdf_internal_box=\box75
 )
-(./PS01_answersJZ.aux)
-\openout1 = `PS01_answersJZ.aux'.
+(./AA_PS01_final.aux)
+\openout1 = `AA_PS01_final.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
@@ -906,106 +906,39 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 67.
 LaTeX Info: Redefining \pageref on input line 67.
 LaTeX Info: Redefining \nameref on input line 67.
- (./PS01_answersJZ.out) (./PS01_answersJZ.out)
+ (./AA_PS01_final.out) (./AA_PS01_final.out)
 \@outlinefile=\write7
-\openout7 = `PS01_answersJZ.out'.
+\openout7 = `AA_PS01_final.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count346
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
-
- []
-
-(/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-(/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang2.sty
-File: lstlang2.sty 2020/03/24 1.8d listings language file
-)
-(/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang3.sty
-File: lstlang3.sty 2020/03/24 1.8d listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 79.
+Runaway argument?
+{1. 90\par \vspace {.25cm} \par \lstinputlisting [language=R, firstli\ETC.
+! File ended while scanning use of \textit .
+<inserted text> 
+                \par 
+<*> AA_PS01_final.tex
+                     
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
 
-(./PS01_answersJZ.R
-consecutive:
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 4
-0.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 40.
-)
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 
-89.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 89.
+! Emergency stop.
+<*> AA_PS01_final.tex
+                     
+*** (job aborted, no legal \end found)
 
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 89.
-
-(./PS01_answersJZ.R
-consecutive:
-) [1
-
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<plot_example.pdf, id=24, 505.89pt x 505.89pt>
-File: plot_example.pdf Graphic file (type pdf)
-<use plot_example.pdf>
-Package pdftex.def Info: plot_example.pdf  used on input line 120.
-(pdftex.def)             Requested size: 352.31625pt x 352.32199pt.
-
-[2 <./plot_example.pdf>] (./PS01_answersJZ.R
-consecutive:
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 6
-3.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 63.
-)
-(./regression_output1.tex) [3] (./PS01_answersJZ.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package rerunfilecheck Info: File `PS01_answersJZ.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 28341 strings out of 478268
- 501684 string characters out of 5846347
- 1041287 words of memory out of 5000000
- 46022 multiletter control sequences out of 15000+600000
- 480015 words of font info for 73 fonts, out of 8000000 for 9000
+ 27229 strings out of 478268
+ 489612 string characters out of 5846347
+ 779643 words of memory out of 5000000
+ 44969 multiletter control sequences out of 15000+600000
+ 478857 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,6n,89p,3246b,2128s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loca
-l/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
-texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PS01_answersJZ.pdf (3 pages, 131229 bytes).
-PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
- 23 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 84i,6n,89p,3245b,262s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

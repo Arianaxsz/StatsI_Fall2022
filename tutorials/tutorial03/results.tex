@@ -5,7 +5,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{listings}
-\author{put your name here}
+\author{Ariana Antunes}
 \title{Analysis of Movie Genre and Critical Reception}
 \begin{document}
 	\maketitle
@@ -20,13 +20,13 @@
 	A preliminary inspection of the data revealed an apparently non-random distribution of critical ratings according to genre. The tables below provide a summary of raw and proportional distributions.
 	\begin{figure}
 			\begin{verbatim}
-	copy and paste here the console output from your raw contingency table
+                    critics_ratinggenre                Rotten Fresh Certified Fresh  Action & Adventure     48     9               8  Comedy                 63    14              10  Documentary             3    32              17  Drama                 124   106              75  Mystery & Suspense     29    23               7
 			\end{verbatim}
 		\caption{\footnotesize Contingency table}
 	\end{figure}
 	\begin{figure}
 			\begin{verbatim}
-	copy and paste here the console output from your proportion table
+                           critics_ratinggenre                       Certified Fresh Fresh Rotten  Action & Adventure                   0.12  0.14   0.74  Animation                            0.33  0.11   0.56  Art House & International            0.21  0.29   0.50  Comedy                               0.11  0.16   0.72  Documentary                          0.33  0.62   0.06  Drama                                0.25  0.35   0.41  Horror                               0.09  0.22   0.70  Musical & Performing Arts            0.33  0.42   0.25  Mystery & Suspense                   0.12  0.39   0.49  Other                                0.25  0.44   0.31  Science Fiction & Fantasy            0.22  0.33   0.44
 			\end{verbatim}
 		\caption{\footnotesize Proportion table along rows}
 	\end{figure}
@@ -35,17 +35,18 @@ Visualisation of the distribution of the data appears to confirm that certain ca
 
 \begin{figure}[h!]\centering
 	\caption{\footnotesize Bar plot}
-	\includegraphics[width=.75\textwidth]{name of file goes here}
+	\includegraphics[width=.75\textwidth]{barplot.png}
 \end{figure} 
 
 Finally, a statistical test was performed on the data using chi square goodness of fit. The code used is detailed below.
 
-\lstinputlisting[language=R, firstline=?, lastline=?]{tutorial03.R}
+\lstinputlisting[language=R, firstline=184, lastline=185]{tutorial03.R}
 
 The results of the test were as follows:
 
 \begin{verbatim}
-	Copy and paste here the console output from your chi square test
+		Pearson's Chi-squared testdata:  table(dat_mini$genre, dat_mini$critics_rating)X-squared = 86.291, df = 8, p-value = 2.626e-15
+		
 \end{verbatim}
 
 \section*{Conclusion}
@@ -53,7 +54,7 @@ The results of the test were as follows:
 In conclusion, we rejected the null hypothesis that critical reception is uncorrelated with movie genre. In particular, we note that Action and Adventure and Comedy are statistically more likely to receive rotten reviews, while documentaries are less likely to receive rotten reviews. Residuals are included below.
 
 \begin{verbatim}
-copy and paste here the console output from your residuals call
+                         Rotten      Fresh Certified Fresh  Action & Adventure  3.1560462 -2.6273867      -1.4727857  Comedy              3.4564262 -2.6716327      -1.8710667  Documentary        -4.3372636  3.6924745       1.9215101  Drama              -1.6178245  0.7240656       1.5359432  Mystery & Suspense  0.2403660  0.8891806      -1.4781878
 \end{verbatim}
 
 \end{document}

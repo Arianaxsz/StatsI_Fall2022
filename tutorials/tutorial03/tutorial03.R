@@ -20,14 +20,39 @@ summary(dat)
 # Explore the `genre` column. How many unique values does it 
 # have? Try using the as.factor() function to transform it to
 # a factor.
+summary(dat$genre) #or we could have used 'unique' function 
+unique()
+as.factor(dat$genre)
+?as.factor
+
+#reassign into the colunm  !! ##IPC 
+dat$genre <- as.factor(dat$genre)
 
 # Explore the `top200_box` column. Try using the as.logical() 
 # function to transform it. What goes wrong?
+##Answer: NA are given as the values as characters
+
+summary(dat$top200_box)
+typeof(dat$top200_box)
+as.logical(dat$top200_box)             #not too sure how this is done tbh! 
+
+#Answer; ielse function is very easy to transform values  
+ifelse()
+
 
 # The ifelse() function can be useful for transforming values,
 # which then allows us to transform the class of the vector.
 # Read the help file on ifelse() and try to use it on 
 #`top200_box` to transform "No" to FALSE and "Yes" to TRUE.
+
+?ifelse
+class(dat$top200_box)
+
+ifelse(dat$top200_box == "yes", TRUE, FALSE) 
+is.logical(dat$top200_box) #still no 
+dat$top200_box_200_1 <- ifelse(dat$top200_box == "yes", TRUE, FALSE) 
+is.logical(dat$top200_box_200_1) #true 
+
 
 ######################
 # Exploratory Analysis
@@ -57,7 +82,7 @@ with(dat, addmargins(table(genre, critics_rating)))
 with(dat, prop.table(table(genre, critics_rating), margin = 1))
 
 # Try to find the proportion along the columns:
-
+with(dat, prop.table(table(genre, critics_rating), margin = 2))
 
 # Total proportion:
 with(dat, prop.table(table(genre, critics_rating)))
@@ -116,6 +141,7 @@ barplot(height = mat,
                            cex = 0.4, 
                            box.col = "white"))
 
+
 # Let's try using prop.table to get a proportional picture
 mat_p <- as.matrix(prop.table(table(dat_mini$genre, 
                                     dat_mini$critics_rating),
@@ -126,11 +152,11 @@ barplot(height = mat_p,
         beside = TRUE, 
         legend.text = TRUE,
         args.legend = list(x = "topleft", 
-                           cex = 0.4, 
+                           cex = 0.4, #text size 
                            box.col = "white"))
 
-# Is this a better visualisation? Does anything about the data
-# strike you?
+# Is this a better visualization? Does anything about the data
+# strike you? 
 
 # Let's save that last plot for use in our Latex file.
 png(filename = "barplot.png",
@@ -149,17 +175,28 @@ dev.off()
 # Testing for Significance
 ##########################
 
+#what is the statistics significance? 
+
 # Look at the help file for the chisq.test() function. How does 
 # it work? Let's call it on the contingency table we used for 
 # the bar plot above.
 
-chi <- 
+?chisq.test
+chi <- chisq.test(table(dat_mini$genre, dat_mini$critics_rating))
+chi
+  
+  ## Warning in chisq.test(table(hair, eyes)): Chi-squared approximation may be
+  ## incorrect
 
 # Remember, when we assign the result of a test to an object,
 # we can then access all the information which belongs to that
 # object.
+
 chi
 ls(chi)
-chi$residuals
+
+chi
+ls(chi)
+chi$residuals  #Residualts are standard deviations
 
 # How do you interpret these results? 
