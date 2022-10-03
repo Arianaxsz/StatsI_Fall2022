@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.14)  1 OCT 2022 18:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.14)  3 OCT 2022 08:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -832,14 +832,7 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count338
 \l__pdf_internal_box=\box75
 )
-(./PS01_AA_answers.aux
-
-LaTeX Warning: Label `fig:plot_1' multiply defined.
-
-
-LaTeX Warning: Label `fig:plot_1' multiply defined.
-
-)
+(./PS01_AA_answers.aux)
 \openout1 = `PS01_AA_answers.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
@@ -860,7 +853,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
- (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count339
 \scratchdimen=\dimen316
@@ -947,50 +941,41 @@ consecutive:
 ) [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] (./AA_PS01.R
-consecutive:
-)
-<Correlation_plot_expenditure.png, id=50, 661.47125pt x 386.44376pt>
-File: Correlation_plot_expenditure.png Graphic file (type png)
-<use Correlation_plot_expenditure.png>
-Package pdftex.def Info: Correlation_plot_expenditure.png  used on input line 1
-18.
-(pdftex.def)             Requested size: 352.31625pt x 205.82843pt.
-<plot_Y+Region.png, id=52, 661.47125pt x 386.44376pt>
-File: plot_Y+Region.png Graphic file (type png)
-<use plot_Y+Region.png>
-Package pdftex.def Info: plot_Y+Region.png  used on input line 129.
-(pdftex.def)             Requested size: 352.31625pt x 205.82843pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 (./AA_PS01.R
 consecutive:
 )
-<Correlation Y X1 & Region.png, id=53, 661.47125pt x 386.44376pt>
+<Correlation_plot_expenditure.png, id=42, 661.47125pt x 386.44376pt>
+File: Correlation_plot_expenditure.png Graphic file (type png)
+<use Correlation_plot_expenditure.png>
+Package pdftex.def Info: Correlation_plot_expenditure.png  used on input line 1
+14.
+(pdftex.def)             Requested size: 352.31625pt x 205.82843pt.
+ [2 <./Correlation_plot_expenditure.png>] (./AA_PS01.R
+consecutive:
+)
+<plot_Y+Region.png, id=53, 661.47125pt x 386.44376pt>
+File: plot_Y+Region.png Graphic file (type png)
+<use plot_Y+Region.png>
+Package pdftex.def Info: plot_Y+Region.png  used on input line 127.
+(pdftex.def)             Requested size: 352.31625pt x 205.82843pt.
+ [3 <./plot_Y+Region.png>] (./AA_PS01.R
+consecutive:
+)
+<Correlation Y X1 & Region.png, id=63, 661.47125pt x 386.44376pt>
 File: Correlation Y X1 & Region.png Graphic file (type png)
 <use Correlation Y X1 & Region.png>
-Package pdftex.def Info: Correlation Y X1 & Region.png  used on input line 144.
+Package pdftex.def Info: Correlation Y X1 & Region.png  used on input line 142.
 
 (pdftex.def)             Requested size: 352.31625pt x 205.82843pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3 <./Correlation_plot_expenditure.png>] [4 <./plot_Y+Region.png> <./Correlatio
-n Y X1 & Region.png>] (./PS01_AA_answers.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
+ [4 <./Correlation Y X1 & Region.png>] (./PS01_AA_answers.aux)
 Package rerunfilecheck Info: File `PS01_AA_answers.out' has not changed.
-(rerunfilecheck)             Checksum: 05B64A07D75AC8B2558ED7A16CBEF7BF;269.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28357 strings out of 478268
- 501897 string characters out of 5846347
- 1177407 words of memory out of 5000000
- 46027 multiletter control sequences out of 15000+600000
+ 28358 strings out of 478268
+ 501922 string characters out of 5846347
+ 1177501 words of memory out of 5000000
+ 46024 multiletter control sequences out of 15000+600000
  479668 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,6n,89p,3247b,2127s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1004,10 +989,10 @@ local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
 cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
 /texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on PS01_AA_answers.pdf (4 pages, 202493 bytes).
+Output written on PS01_AA_answers.pdf (4 pages, 200736 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
- 37 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
+ 39 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

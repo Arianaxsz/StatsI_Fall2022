@@ -98,19 +98,15 @@
 	
 \end{verbatim}
 
-\newpage
 
-
-\section{Question 2 (50 points): Political Economy}
+\section*{Question 2 (50 points): Political Economy}
 
 \subsection*{The correlation plot between Y, X1, X2 and X3} 
 
-\noindent You can also save figures in R, and place them in your answers that you're writing in your .tex file. First, you need to make sure your path/file name is correct, then you'll save your work when your in R (see code below).
+It seems the correlation appears to be much similar when compering the different variables. 
 
 \lstinputlisting[language=R, firstline=118, lastline=119]{AA_PS01.R}  
 \vspace{.25cm}
-\noindent With our figure saved, we just need to render it in our .tex file, which we can do using the \texttt{figure} environment:
-
 
 \begin{figure}[h!]\centering
 	\caption{\footnotesize Correlation between Y, X1, X2 and X3.}
@@ -118,29 +114,31 @@
 	\includegraphics[width=.75\textwidth]{Correlation_plot_expenditure.png}
 \end{figure}
 
-It seems the correlation appears to be much similar when compering the different variables. 
-
+\newpage
 \subsection*{The correlation plot between Y and Region}
-
-
-\begin{figure}[h!]\centering
-	\caption{\footnotesize correlation plot  between Y and Region.}
-	\label{fig:plot_1}
-	\includegraphics[width=.75\textwidth]{plot_Y+Region.png}
-\end{figure}
 
 On average west region have the highest per capita expenditure on housing assistance. 
 
+\lstinputlisting[language=R, firstline=130, lastline=131]{AA_PS01.R}  
+
+\begin{figure}[h!]\centering
+	\caption{\footnotesize correlation plot  between Y and Region.}
+	\label{fig:plot_2}
+	\includegraphics[width=.75\textwidth]{plot_Y+Region.png}
+\end{figure}
+
+\newpage
 
 \subsection*{The correlation plot between Y, X1 and Region}
 
+It seems there's a clear line between the regions, but region 3 is the lowest per capita expenditure on shelters/housing assistance in state and the lowest income per capita as well, region 4 is the highest income per capita, but it seems region 1 has the highest expenditure on housing assistance. 
 
 \lstinputlisting[language=R, firstline=137, lastline=139]{AA_PS01.R}  
 
 
 \begin{figure}[h!]\centering
 	\caption{\footnotesize correlation plot  between Y and Region.}
-	\label{fig:plot_1}
+	\label{fig:plot_3}
 	\includegraphics[width=.75\textwidth]{Correlation Y X1 & Region.png}
 \end{figure}
 
