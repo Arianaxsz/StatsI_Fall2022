@@ -10,8 +10,18 @@ dat <- midwest # A built-in dataset
 
 ## Explore data
 ?midwest
+
+#this is more of a tibble than a data set, 
 # use your own code here to explore
 
+colnames(midwest)
+summary(midwest)
+str(midwest) #the list structure of the data frame
+head(midwest)
+colnames(dat)
+unique(dat)
+unique(dat$state)
+# lil secret from Martyn = lm can work with character vectors as if they were factor. 
 
 ### ggplot
 
@@ -36,10 +46,10 @@ ggplot(aes(x = x1, y = y1), # We use the aes() function to supply an x and y arg
 # percent college educated is used to predict the percentage of people
 # below the poverty line.
 
-ggplot(aes(x = , # add the independent variable
-           y = ), # add the dependent variable
-       data = ) + # add the data source
-  geom_point()
+ggplot(aes(x = percollege, # add the independent variable
+           y = percbelowpoverty), # add the dependent variable
+       data = midwest) + # add the data source
+  geom_point(aes(color = midwest$percollege)) + labs(title = "College Educated vs below poverty line")
 
 # How would we add a title to this plot? Try looking in the help file and
 # using google to find out.
@@ -66,8 +76,15 @@ pairs(dat[c("poptotal", "percwhite", "percblack", "perchsd",
 # correlation, pick two variables to run the cor() function on. 
 # Visualise these separately using ggplot, and save the output to file.
 
+with(dat, cor(percbelowpoverty, percollege)) #-0.281 
+  
+ggplot(aes(x = percollege, 
+           y = percbelowpoverty), 
+       data = dat) +
+  geom_point()
+
 # Code to save your plot (saves last plot)
-ggsave("corr_plot",
+ggsave("corr_plot.png",
        device = "png",
        dpi = 300)
 
@@ -85,7 +102,7 @@ ggsave("corr_plot",
 # according to their density.
 
 ggplot(aes(percbelowpoverty, percollege), data = dat) +
-  geom_point(alpha = 0.2) # set alpha manually to between 0 and 1
+  geom_point(alpha = 0.2) # set alpha manually to between 0 and 1 (high density of points, the plot get darker)
 
 # 2. Jitter
 # We can use the position = "jitter" argument to add random noise to the 
@@ -109,7 +126,7 @@ ggplot(aes(percbelowpoverty, percollege,
 ggplot(aes(percbelowpoverty, percollege), 
        data = dat) +
   geom_point(alpha = 0.2) +
-  facet_wrap(~state) # Here, we facet
+  facet_wrap(~state) # Here, we facet #this would be easier than pairs () 
 
 dev.off() # To prevent plotting errors below
 
@@ -119,7 +136,7 @@ dev.off() # To prevent plotting errors below
 # the independent variable, and percent below poverty is the outcome, or
 # dependent variable.
 
-coll_pov <- lm(, # add the correct code here 
+coll_pov <- lm(percbelowpoverty ~ percollege, # add the correct code here 
                data = dat)
 summary(coll_pov)
 
@@ -132,23 +149,24 @@ abline(coll_pov, # our regression model
        col = "blue")
 
 # How would we plot this using ggplot?
-ggplot(aes(x = , 
-           y = ), 
-       data = ) +
+ggplot(aes(x = percollege , 
+           y = percbelowpoverty), 
+       data = dat) +
   geom_point() +
-  geom_smooth(method = "lm", formula = y ~ x)
+  geom_smooth(method = "lm", formula = y ~ x) #This gives us an grey area for the margin of error
 
 ## Regression models
 # Remember, when you assign the output of lm() to an object, you get an 
 # object of class...
-class(coll_pov)
+class(coll_pov) #lm is a class in itself 
+typeof(coll_pov)
 
 # This contains a lot of useful data
 str(coll_pov)
 
 # We can plot our residuals
 plot(dat$percollege, 
-     resid(coll_pov)) # a convenience function for extracting residuals
+     resid(coll_pov)) # a convenience function for extracting residuals ; it should have a uniform destribution
 abline(h = 0, col = "red")
 
 # With ggplot:
