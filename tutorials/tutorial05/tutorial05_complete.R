@@ -183,7 +183,7 @@ dat %>%
   summarise(av_runtime = mean(runtime)) %>%
   ggplot(aes(thtr_rel_year, av_runtime)) +
   geom_line() +
-  geom_smooth(col = "red", se = FALSE) +
+  geom_smooth(col = "red", se = FALSE) + 
   labs(title = "Average Theatrical Running Time", 
        subtitle = "Feature Films", 
        x = "Release Year", 

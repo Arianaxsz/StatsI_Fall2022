@@ -4,7 +4,8 @@
 
 ## Packages
 library(tidyverse) # Load our packages here
-library(broom) # If not installed - function for installing?
+library(broom) # If not installed - function for installing? tidy as well, used for models/modeling functions, tidy into retangular objects in
+install.packages("broom")
 
 ?tidyverse
 browseVignettes(package = "tidyverse")
@@ -17,6 +18,7 @@ browseVignettes(package = "tidyverse")
 # we can read in a csv file using the read_csv() function, which is 
 # similar to base R's read.csv() function.
 dat <- read.csv("movies.csv")
+ 
 
 ##########
 # Exercise
@@ -25,6 +27,10 @@ dat <- read.csv("movies.csv")
 # Change the above code to use readr's read_csv() function. Assign
 # the output to a different object. What do you notice is different 
 # about the two functions?
+
+dat2 <- read_csv("movies.csv")   # using tidyverse 
+class(dat) #this one is a data.frame coming from usual R
+class(dat2) #this one is 4 different attributes, and they make a tibble, which is a tidyverse version of a data.frame
 
 vignette("tibble")
 
@@ -41,12 +47,14 @@ vignette("dplyr")
 filter(dat, title_type == "Feature Film")
 
 ## (Selecting or mutating on) columns
-select(dat, thtr_rel_month)
-mutate(dat, rel_mon = month.abb[thtr_rel_month])
+select(dat, thtr_rel_month) #theatrical release month column 
+mutate(dat, rel_mon = month.abb[thtr_rel_month]) #month.abb = abbreviation of the months #transforming the numbers into letters of the months 
+#mutate creates a new column 
 
 ## Group by and summarise into a single row
 by_month <- group_by(dat, thtr_rel_month)
-summarise(by_month, n = n())
+by_month  #gets me a month in tibble we can better visualize 
+summarise(by_month, n = n())  #n is the number of observations on each group ; and gives the frequency of each month 
 
 ##########
 # The pipe
@@ -64,6 +72,8 @@ dat %>%
   summarise(n = n()) %>% # perform a summary operation (count the n per month)
   arrange(desc(n)) # sort in descending order
 
+#notes: if we needed to do this in base R the code would be longer and propably not clear. 
+
 # Here, we perform 6 operations, one after the other, to manipulate 
 # our dataset.
 
@@ -76,9 +86,22 @@ dat %>%
 # column. Which is the most popular month for Horror films to be 
 # released?
 
+dat %>% 
+  filter(genre == "Horror") %>% 
+  select(thtr_rel_month) %>% 
+  mutate(month = month.abb[thtr_rel_month]) %>% 
+  group_by(month) %>% 
+  summarise(n = n()) %>% 
+  arrange(desc(n)) 
 
 # 2. Using the dplyr commands you have learned, find the actor 
-# (actor1) with the most award wins. 
+# (actor1) with the most award wins. ~ this is a conditional questions 
+
+dat %>% 
+  filter(best_actor_win == "yes") %>% 
+  group_by(actor1) %>% 
+  summarise(n = n()) %>%   ##perform a summary operation (count the n per month)
+  arrange(desc(n)) 
 
 
 #######################
@@ -100,12 +123,30 @@ dat %>%
   mutate(prop_month = round(n / sum(n), 2)) %>% # mutate after our summarise to find the proportion
   arrange(desc(prop_month))
 
+#changed to 3 to have a better view on all desc columns 
+dat %>%  
+  mutate(month = month.abb[thtr_rel_month]) %>% 
+  group_by(month) %>% 
+  summarise(n = n()) %>%
+  mutate(prop_month = round(n / sum(n), 3)) %>% # mutate after our summarise to find the proportion
+  arrange(desc(prop_month))
+
+
 ##########
 # Exercise
 ##########
 
 # Using the code above as a template, perform the same operation on 
 # a subset of horror films
+
+dat %>%  
+  filter(genre == "Horror") %>% 
+  mutate(month = month.abb[thtr_rel_month]) %>% 
+  group_by(month) %>% 
+  summarise(n = n()) %>%
+  mutate(prop_month = round(n / sum(n), 2)) %>% # mutate after our summarise to find the proportion
+  arrange(desc(prop_month))
+
 
 
 #############
@@ -120,13 +161,14 @@ dat %>%
 
 # Note: try breaking the code below at different points to see what
 # is happening to the data at each stage.
+#this code is 14 and it makes no sense to use such a long code just to plot 
 
 dat %>%
   select(genre, thtr_rel_month) %>% # just keep the two relevant cols
   mutate(horror = genre == "Horror") %>% # make a new logical col for horror films
   group_by(thtr_rel_month, horror) %>% # perform a nested grouping operation (release month, then T/F horror)
   summarise(n = n()) %>% # get a raw count for each group
-  pivot_wider(names_from = horror, values_from = n) %>% # change the shape of our data
+  pivot_wider(names_from = horror, values_from = n) %>% # change the shape of our data, from columns to rows(?)
   ungroup() %>%
   mutate(All = round(`FALSE` / sum(`FALSE`), 2), # calculate proportions for all films
          Horror = `TRUE` / sum(`TRUE`, na.rm = TRUE)) %>% # calculate proportions for horror films
@@ -155,3 +197,71 @@ dat %>%
 # learned about today to find out whether the average running time 
 # of feature films has increased in recent years.
 
+
+
+dat %>%
+  filter(title_type == "Feature Film") %>%
+  select(runtime, thtr_rel_year) %>%
+  group_by(thtr_rel_year) %>%
+  summarise(av_runtime = mean(runtime)) %>%
+  ggplot(aes(thtr_rel_year, av_runtime)) +
+  geom_line() +
+  geom_smooth(col = "red", se = FALSE) + 
+  labs(title = "Average Theatrical Running Time", 
+       subtitle = "Feature Films", 
+       x = "Release Year", 
+       y = "Average Running Time (minutes)")
+
+
+# longest movies time ever
+
+dat %>% 
+  filter(thtr_rel_year > 1995 & thtr_rel_year < 1999) %>% 
+  filter(runtime > 120) %>% 
+  select(title, runtime, thtr_rel_year) %>% 
+  arrange(desc(runtime))
+
+
+dat %>% 
+  filter(best_pic_win == "yes") %>% 
+  summarise(mean_run_time = mean(runtime))
+
+#with the total sum of the winners 
+
+dat %>% 
+  filter(best_pic_win == "yes") %>% 
+  summarise(mean_run_time = mean(runtime),
+            n = n(),
+            sd = sd(runtime))
+
+
+dat %>% 
+  summarise(mean_run_time = mean(runtime, na.rm = TRUE),
+            n = n(),
+            sd = sd(runtime, na.rm = TRUE))
+
+## we need to use thr na.rm to remove NAs or else the function wouldn't work 
+
+
+#playing in class with the data
+
+# how to compare two means, we need 
+#1. two means: 105.8215 and 143.2857
+#2. sample sizes: 651 and 7 "7 is the total amount of winners" 
+#3. standard deviations: 43.71 and 19.44
+
+
+
+#n = sample sizes? overall sample size and the number for the second groung ; 
+nrow(dat)
+# > [1] 651 
+# full sample is 651 
+# Sample = avg running time for all films vs the aveg running time for all winners  
+# 
+
+
+#t.test functions 
+#Do we have two samples? we need to check our samples sice and which one is the population. 
+
+#we need to understand what is the sample and what is the population !! 
+#understand the 2 weeks materials and theories 

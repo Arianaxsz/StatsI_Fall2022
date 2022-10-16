@@ -164,3 +164,4 @@ ls(chi)
 chi$residuals
 
 # How do you interpret these results? 
+
