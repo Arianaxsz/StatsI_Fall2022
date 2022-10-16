@@ -10,7 +10,7 @@ install.packages("olsrr")
 library(olsrr)
 ### Question 1 
 
-##(a) x-saured value
+#(a) x-saured value
 
 #Df = 3 - 1 = 2
 #critical value = 5.990
@@ -18,31 +18,27 @@ library(olsrr)
 Upperclass <- c(14, 6, 7)
 Lowerclass <- c(7, 7, 1)
 
+
 sum((Upperclass - Lowerclass)**2/Upperclass)
 
 #Manually chi.square value  
 ((7 - 14)^2)/14 + ((7 - 6)^2)/6 + ((1 - 7)^2)/7
-
-
 # > [1] 8.809524
-
-#p value 
-8.809524 
- 
 
 n <- length(Lowerclass + Upperclass)
 
-
-03 < p < .01  
-
+pvalue <-03 < p < .01  
 
 chisq.test(Lowerclass, p = Upperclass)
 
 #X-squared  = 6.257143 
 
-ci <- read_excel("~/Downloads/Ps02_Corruption and Inequality at the Crossroad.xlsx")
+table_ps02 <- read_excel("~/Downloads/table ps02.xlsx")
 
-chisq.test(Ps02_Corruption_and_Inequality_at_the_Crossroad)
+
+((7 - 14)^2)/14 + ((7 - 6)^2)/6 + ((1 - 7)^2)/7
+
+chisq.test(table_ps02)
 
 ## (b)p-value from the test
 #df = 2
@@ -86,47 +82,52 @@ ggsave("Residuals plot")
 
 women <- read.csv("https://raw.githubusercontent.com/kosukeimai/qss/master/PREDICTION/women.csv")
 
+# a) state a null hypothesis and alternative hypothesis
+# b) bivariate regression
 
-mean <- mean(women$reserved)
-sd <- sd(women$reserved)
+pbar = 124/5745 #sample proportion 
+p0 = .5 #hypothesis value 
+n = 26082 #sample size 
 
-as.logical(women$reserved)
-as.factor(women$reserved)
-women$reserved <- as.factor(women$reserved) # Convert to factor
-levels(women$reserved) <- c("City 1 ", "City 2") 
+z = (pbar - p0)/sqrt(p0*(1 - p0)/n) #test statistic 
+z # [1] -154.5276
 
-dataset <- table (women$reserved, women$water)
+#critcal valye at .05 significant level
 
+alpha = .05 
+z.half.alpha = qnorm(1 - alpha/2) 
+c(- z.half.alpha, z.half.alpha) 
 
-mean(dataset)
-sd(dataset)
+# [1] -1.959964  1.959964
 
-t.test(dataset, mu = 4)
+t.test(women$reserved, women$water, mu = ,)
 
 t.test(reserved ~ water, 
        data = women,
-       mu = 4, 
+       mu = 2, 
        var.equal = FALSE, 
        alternative = "two.sided",
        conf.level = .95)
 
-tail(dataset)
+t.test(women$water, conf.level = 0.5, alternative = "two.sided")
 
-##(B) bivariate regression 
+boxplot(women$reserved, women$water)
 
-ggplot(data = women, aes(x = reserved, y = water)) + 
-         geom_point() + 
-         geom_abline()
-
-#br 
-ols_regress(reserved ~ water, data = women)
-
-#the value is significant ! 
+# p value 
+pval = 2* pnorm(-154.5, lower.tail=FALSE)  # upper tail 
+pval  
 
 
-##(c) Interpret the coefficient estimate for reservation policy.
+rb <- lm(water ~ reserved, data = women)
+summary(rb)
 
-this is really tiring! 
-  
-  
+#(c) Interpret the coefficient estimate for reservation policy.
+
+lm(women$female ~ women$water)
+?coefficients
+
+coef(rb)
+# (Intercept)    reserved 
+#  14.738318    9.252423 
+
 
