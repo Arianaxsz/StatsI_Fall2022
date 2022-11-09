@@ -8,7 +8,8 @@ install.packages("dplyr")
 library(dplyr)
 install.packages("ggplot2")
 library(ggplot2)
-
+install.packages("stargazer")
+library(stargazer)
 # set wd
 setwd("~/Documents/GitHub/StatsI_Fall2022")
 
@@ -49,6 +50,8 @@ str(Incumbets_subset)
 regression_model_problem1 <- lm(voteshare ~ difflog, data=Incumbets_subset)
 # get summary of model with coefficient estimates 
 summary(regression_model_problem1)
+#table for the summary with stargazer 
+stargazer(regression_model_problem1, type = "html", title = "Summary table")
 
 # Create scatter plot of vote share and difflog with a regression line #Y is a linear function of x 
 pdf("problemSets/PS03/my_answer_AA/plot_v&d.pdf", width = 8)
