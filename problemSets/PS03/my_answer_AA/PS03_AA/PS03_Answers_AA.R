@@ -11,7 +11,7 @@ library(ggplot2)
 install.packages("stargazer")
 library(stargazer)
 # set wd
-setwd("~/Documents/GitHub/StatsI_Fall2022")
+setwd("~/Documents/GitHub/StatsI_Fall2022/problemSets/Ps03/my_answer_AA")
 
 # clear global .envir
 
@@ -51,10 +51,10 @@ regression_model_problem1 <- lm(voteshare ~ difflog, data=Incumbets_subset)
 # get summary of model with coefficient estimates 
 summary(regression_model_problem1)
 #table for the summary with stargazer 
-stargazer(regression_model_problem1, type = "html", title = "Summary table")
+stargazer(regression_model_problem1, type = "latex", title = "Summary table for Difflog & Vote share")
 
 # Create scatter plot of vote share and difflog with a regression line #Y is a linear function of x 
-pdf("problemSets/PS03/my_answer_AA/plot_v&d.pdf", width = 8)
+png(filename = "plot_1.png",width = 1000, height = 500)
 ggplot(data = Incumbets_subset, aes(x = difflog, y = voteshare)) + 
   geom_point(aes(color = voteshare)) + 
   geom_smooth(method = "lm", se = FALSE) +
