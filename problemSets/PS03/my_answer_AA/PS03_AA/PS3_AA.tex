@@ -61,7 +61,7 @@
 \newtheorem{hyp}{Hypothesis}
 
 \title{Problem Set 3}
-\date{Date: November, 2022}
+\date{Date: 20 November, 2022}
 \author{Applied Stats/Quant Methods 1 - 
 Ariana Alves Antunes}
 
@@ -119,12 +119,15 @@ There is a strong positie trend between the response variable 'vote share' and e
 		
 		\item Write the prediction equation.
 
-b=  ( Σ(x-x ̅ )(y-y ̅))/〖 Σ(x-x ̅)〗^2 ,a=y ̅-bx ̅
 
 
-y ̂=a+bx
-y ̂=0.579031+0.041666x 
+$\bar{y} =\textit{a+bx}  $
 
+
+$\bar{y}=0.579031+0.041666x $
+
+		\vspace{0.5cm}
+		
 The predicted difference increases by b = 0.041 difference between difference in expending between the two candidates. 
 		
 		
@@ -135,33 +138,117 @@ The predicted difference increases by b = 0.041 difference between difference in
 \section*{Question 2}
 \noindent We are interested in knowing how the difference between incumbent and challenger's spending and the vote share of the presidential candidate of the incumbent's party are related.	\vspace{.25cm}
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.	\vspace{5cm}
-		\item Make a scatterplot of the two variables and add the regression line. 	\vspace{5cm}
-		\item Save the residuals of the model in a separate object.	\vspace{5cm}
+		\item Run a regression where the outcome variable is \texttt{presvote} and the explanatory variable is \texttt{difflog}.	
+		
+\lstinputlisting[language=R, firstline=90, lastline=93]{PS03_Answers_AA.R}  		
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com% Date and time: Thu, Nov 17, 2022 - 13:24:30
+\begin{table}[!htbp] \centering   \caption {Summary table for Difflog and Presvote}  \label{} 
+	\begin{tabular}
+		{@{\extracolsep{5pt}}lc} \\[-1.8ex]\hline \hline \\[-1.8ex]  & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ \cline{2-2} \\[-1.8ex] & presvote \\ \hline \\[-1.8ex]  difflog & 0.024$^{***}$ \\   & (0.001) \\   & \\  Constant & 0.508$^{***}$ \\   & (0.003) \\   & \\ \hline \\[-1.8ex] Observations & 3,193 \\ R$^{2}$ & 0.088 \\ Adjusted R$^{2}$ & 0.088 \\ Residual Std. Error & 0.110 (df = 3191) \\ F Statistic & 307.715$^{***}$ (df = 1; 3191) \\ \hline \hline \\[-1.8ex] \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+	\end{tabular} \end{table} 
+
+Inference: 
+
+\vspace{2cm}
+		
+		\item Make a scatterplot of the two variables and add the regression line. 	
+
+\lstinputlisting[language=R, firstline=100, lastline=104]{PS03_Answers_AA.R}  
+
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Plot of Presvote and Difflog.}
+	\label{fig:plot_1}
+	\includegraphics[width=.75\textwidth]{plot_2.png}
+\end{figure}
+
+There is a strong positie trend between the response variable 'presvote' and explanatory variable 'difflog'. \vspace{2cm}
+		
+		\item Save the residuals of the model in a separate object.	
+
+\lstinputlisting[language=R, firstline=106, lastline=108]{PS03_Answers_AA.R}  		
+		
 		\item Write the prediction equation.
+
+$\bar{y} =\textit{a+bx}  $
+
+
+$\bar{y}=0.508+0.024x $
+
 	\end{enumerate}
 	
 	\newpage	
+	
 \section*{Question 3}
 
 \noindent We are interested in knowing how the vote share of the presidential candidate of the incumbent's party is associated with the incumbent's electoral success.
 	\vspace{.25cm}
 	\begin{enumerate}
 		\item Run a regression where the outcome variable is \texttt{voteshare} and the explanatory variable is \texttt{presvote}.
-			\vspace{5cm}
+		
+\lstinputlisting[language=R, firstline=115, lastline=116]{PS03_Answers_AA.R}  				
+		
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com% Date and time: Thu, Nov 17, 2022 - 13:45:40
+\begin{table}[!htbp] \centering   \caption{Summary table for Voteshare and Presvote}   \label{} \begin{tabular}{@{\extracolsep{5pt}}lc} \\[-1.8ex]\hline \hline \\[-1.8ex]  & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ \cline{2-2} \\[-1.8ex] & voteshare \\ \hline \\[-1.8ex]  presvote & 0.388$^{***}$ \\   & (0.013) \\   & \\  Constant & 0.441$^{***}$ \\   & (0.008) \\   & \\ \hline \\[-1.8ex] Observations & 3,193 \\ R$^{2}$ & 0.206 \\ Adjusted R$^{2}$ & 0.206 \\ Residual Std. Error & 0.088 (df = 3191) \\ F Statistic & 826.950$^{***}$ (df = 1; 3191) \\ \hline \hline \\[-1.8ex] \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ \end{tabular} \end{table} 		
+
+			
 		\item Make a scatterplot of the two variables and add the regression line. 
-			\vspace{5cm}
+
+\lstinputlisting[language=R, firstline=123, lastline=127]{PS03_Answers_AA.R}  
+
+\begin{figure}[h!]\centering
+	\caption{\footnotesize Plot of Presvote and Difflog.}
+	\label{fig:plot_1}
+	\includegraphics[width=.75\textwidth]{plot_3.png}
+\end{figure}			
+			
+			
 		\item Write the prediction equation.
+		
+$\bar{y} =\textit{a+bx}  $
+
+
+$\bar{y}=0.441330+0.388018x $		
+		
+		
 	\end{enumerate}
 	
 
 \newpage	
 \section*{Question 4}
 \noindent The residuals from part (a) tell us how much of the variation in \texttt{voteshare} is $not$ explained by the difference in spending between incumbent and challenger. The residuals in part (b) tell us how much of the variation in \texttt{presvote} is $not$ explained by the difference in spending between incumbent and challenger in the district.
+
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.	\vspace{6cm}
-		\item Make a scatterplot of the two residuals and add the regression line. 	\vspace{6cm}
+		
+		\item Run a regression where the outcome variable is the residuals from Question 1 and the explanatory variable is the residuals from Question 2.	
+
+		\lstinputlisting[language=R, firstline=141, lastline=146]{PS03_Answers_AA.R}  						
+		
+		% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com% Date and time: Thu, Nov 17, 2022 - 14:21:28
+		\begin{table}[!htbp] \centering   \caption{Summary table for Residuals}   \label{} \begin{tabular}{@{\extracolsep{5pt}}lc} \\[-1.8ex]\hline \hline \\[-1.8ex]  & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ \cline{2-2} \\[-1.8ex] & Inc\_residuals \\ \hline \\[-1.8ex]  Inc\_residuals2 & 0.257$^{***}$ \\   & (0.012) \\   & \\  Constant & $-$0.000 \\   & (0.001) \\   & \\ \hline \\[-1.8ex] Observations & 3,193 \\ R$^{2}$ & 0.130 \\ Adjusted R$^{2}$ & 0.130 \\ Residual Std. Error & 0.073 (df = 3191) \\ F Statistic & 476.975$^{***}$ (df = 1; 3191) \\ \hline \hline \\[-1.8ex] \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ \end{tabular} \end{table}  \vspace{2cm}
+		
+		
+		\item Make a scatterplot of the two residuals and add the regression line. 	
+
+	\lstinputlisting[language=R, firstline=148, lastline=153]{PS03_Answers_AA.R}  
+		
+		\begin{figure}[h!]\centering
+			\caption{\footnotesize Plot of Residuals}
+			\label{fig:plot_1}
+			\includegraphics[width=.75\textwidth]{plot_4.png}
+		\end{figure}		
+	
+\vspace{2cm}
+		
+		
 		\item Write the prediction equation.
+		
+$\bar{y} =\textit{a+bx}  $
+
+
+$\bar{y}=0+0.257x $		
+		
+
 	\end{enumerate}
 	
 	\newpage	
@@ -169,11 +256,31 @@ The predicted difference increases by b = 0.041 difference between difference in
 \section*{Question 5}
 \noindent What if the incumbent's vote share is affected by both the president's popularity and the difference in spending between incumbent and challenger? 
 	\begin{enumerate}
-		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.	\vspace{5cm}
-		\item Write the prediction equation.	\vspace{5cm}
-		\item What is it in this output that is identical to the output in Question 4? Why do you think this is the case?
-	\end{enumerate}
+		\item Run a regression where the outcome variable is the incumbent's \texttt{voteshare} and the explanatory variables are \texttt{difflog} and \texttt{presvote}.	
 
+\lstinputlisting[language=R, firstline=164, lastline=168]{PS03_Answers_AA.R}  				
+		
+	% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com% Date and time: Thu, Nov 17, 2022 - 14:35:58
+\begin{table}[!htbp] \centering   \caption{Summary table for           voteshare, difflog and presvote}   \label{}
+	 \begin{tabular}{@{\extracolsep{5pt}}lc} \\[-1.8ex]\hline \hline \\[-1.8ex]  & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ \cline{2-2} \\[-1.8ex] & voteshare \\ \hline \\[-1.8ex]  difflog & 0.036$^{***}$ \\   & (0.001) \\   & \\  presvote & 0.257$^{***}$ \\   & (0.012) \\   & \\  Constant & 0.449$^{***}$ \\   & (0.006) \\   & \\ \hline \\[-1.8ex] Observations & 3,193 \\ R$^{2}$ & 0.450 \\ Adjusted R$^{2}$ & 0.449 \\ Residual Std. Error & 0.073 (df = 3190) \\ F Statistic & 1,302.947$^{***}$ (df = 2; 3190) \\ \hline \hline \\[-1.8ex] \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+	\end{tabular} 
+\end{table} 	
+		
+		
+		\vspace{2cm}
+		
+		\item Write the prediction equation.	
+		
+		$Y = Xb + e
+		$y = o.36 + 0.257 x  presvote + 0.449 x  constant 
+		\vspace{2cm}
+		
+		\item What is it in this output that is identical to the output in Question 4? Why do you think this is the case?
+		
+In this summary the	presvote output is 0.257 and in questions 4 the residual for question 2 is also 0.257, since the variables are with the same covariance and variables. 
+! this is probably wrong.
+
+	\end{enumerate}
 
 
 

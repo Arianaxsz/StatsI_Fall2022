@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.15)  11 NOV 2022 11:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.15)  17 NOV 2022 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -807,7 +807,29 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box75
 )
-(./PS3_AA.aux)
+(./PS3_AA.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `fig:plot_1' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `fig:plot_1' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `fig:plot_1' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `PS3_AA.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
@@ -828,8 +850,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
 LaTeX Font Info:    ... okay on input line 69.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
 LaTeX Font Info:    ... okay on input line 69.
-
-(/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count336
 \scratchdimen=\dimen308
@@ -921,198 +942,61 @@ Package pdftex.def Info: plot_1.png  used on input line 106.
 (pdftex.def)             Requested size: 352.31625pt x 176.15665pt.
  [2 <./plot_1.png>] (./PS03_Answers_AA.R
 consecutive:
+) [3] (./PS03_Answers_AA.R
+consecutive:
+) (./PS03_Answers_AA.R
+consecutive:
 )
-
-! LaTeX Error: Unicode character Σ (U+03A3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 b=  ( Σ
-              (x-x ̅ )(y-y ̅))/〖 Σ(x-x ̅)〗^2 ,a=y ̅-bx ̅
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ̅ (U+0305)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 b=  ( Σ(x-x ̅
-                      )(y-y ̅))/〖 Σ(x-x ̅)〗^2 ,a=y ̅-bx ̅
-You may provide a definition with
-\DeclareUnicodeCharacter 
+<plot_2.png, id=56, 450.68375pt x 368.37625pt>
+File: plot_2.png Graphic file (type png)
+<use plot_2.png>
+Package pdftex.def Info: plot_2.png  used on input line 162.
+(pdftex.def)             Requested size: 352.31625pt x 287.98996pt.
+ [4] (./PS03_Answers_AA.R
+consecutive:
+) [5 <./plot_2.png>] (./PS03_Answers_AA.R
+consecutive:
+) (./PS03_Answers_AA.R
+consecutive:
+)
+<plot_3.png, id=86, 410.53375pt x 351.3125pt>
+File: plot_3.png Graphic file (type png)
+<use plot_3.png>
+Package pdftex.def Info: plot_3.png  used on input line 202.
+(pdftex.def)             Requested size: 352.31625pt x 301.4903pt.
 
 
-! LaTeX Error: Unicode character ̅ (U+0305)
-               not set up for use with LaTeX.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 b=  ( Σ(x-x ̅ )(y-y ̅
-                              ))/〖 Σ(x-x ̅)〗^2 ,a=y ̅-bx ̅
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 〖 (U+3016)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 b=  ( Σ(x-x ̅ )(y-y ̅))/〖
-                                     Σ(x-x ̅)〗^2 ,a=y ̅-bx ̅
-You may provide a definition with
-\DeclareUnicodeCharacter 
+[6] (./PS03_Answers_AA.R
+consecutive:
+) [7 <./plot_3.png>] (./PS03_Answers_AA.R
+consecutive:
+)
+<plot_4.png, id=118, 602.25pt x 351.3125pt>
+File: plot_4.png Graphic file (type png)
+<use plot_4.png>
+Package pdftex.def Info: plot_4.png  used on input line 238.
+(pdftex.def)             Requested size: 352.31625pt x 205.52501pt.
 
 
-! LaTeX Error: Unicode character Σ (U+03A3)
-               not set up for use with LaTeX.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 b=  ( Σ(x-x ̅ )(y-y ̅))/〖 Σ
-                                       (x-x ̅)〗^2 ,a=y ̅-bx ̅
-You may provide a definition with
-\DeclareUnicodeCharacter 
+[8] (./PS03_Answers_AA.R
+consecutive:
+) [9 <./plot_4.png>] [10] (./PS3_AA.aux)
 
+LaTeX Warning: There were multiply-defined labels.
 
-! LaTeX Error: Unicode character ̅ (U+0305)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 b=  ( Σ(x-x ̅ )(y-y ̅))/〖 Σ(x-x ̅
-                                              )〗^2 ,a=y ̅-bx ̅
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character 〗 (U+3017)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 b=  ( Σ(x-x ̅ )(y-y ̅))/〖 Σ(x-x ̅)〗
-                                                  ^2 ,a=y ̅-bx ̅
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.122 ...( Σ(x-x ̅ )(y-y ̅))/〖 Σ(x-x ̅)〗^
-                                                  2 ,a=y ̅-bx ̅
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-! LaTeX Error: Unicode character ̅ (U+0305)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ...̅ )(y-y ̅))/〖 Σ(x-x ̅)〗^2 ,a=y ̅
-                                                  -bx ̅
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ̅ (U+0305)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ...-y ̅))/〖 Σ(x-x ̅)〗^2 ,a=y ̅-bx ̅
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.123 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.123 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra }, or forgotten \endgroup.
-\@par ... \@noitemerr {\@@par }\fi \else {\@@par }
-                                                  \fi 
-l.123 
-      
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: Unicode character ̂ (U+0302)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.125 y ̂
-          =a+bx
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-! LaTeX Error: Unicode character ̂ (U+0302)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.126 y ̂
-          =0.579031+0.041666x
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-[3] [4] [5] [6] [7] (./PS3_AA.aux)
 Package rerunfilecheck Info: File `PS3_AA.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26988 strings out of 478268
- 474213 string characters out of 5846346
- 1002294 words of memory out of 5000000
- 44665 multiletter control sequences out of 15000+600000
- 480045 words of font info for 73 fonts, out of 8000000 for 9000
+ 27084 strings out of 478268
+ 475582 string characters out of 5846346
+ 1027334 words of memory out of 5000000
+ 44688 multiletter control sequences out of 15000+600000
+ 480746 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,10n,89p,3238b,2214s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
@@ -1130,10 +1014,10 @@ ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on PS3_AA.pdf (7 pages, 293177 bytes).
+Output written on PS3_AA.pdf (10 pages, 483779 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 236 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
