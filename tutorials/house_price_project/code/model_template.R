@@ -6,21 +6,62 @@
 ### Make sure your model works as expected by running summary().
 
 # Load any packages here
+library(broom)
+library(ggplot2)
+install.packages("stargaze")
+library(stargazer)
+library(tidyverse)
+library(dplyr)
 
 # Load training data
 train <- readRDS("data/train.rds")
 
-# Data transformation
-train <- train %>% 
+# Data transformation - Natasha code 
+zip_group <- dat %>%
+  group_by(ZipCode) %>%
+  summarise(med_price = median(SalePrice),
+            count = n()) %>%
+  arrange(med_price) %>%
+  mutate(cumul_count = cumsum(count),
+         ZipGroup = ntile(cumul_count, 5))
+dat <- dat %>%
+  left_join(select(zip_group, ZipCode, ZipGroup), by = "ZipCode")
+  
+  
   # Add here any code necessary to transform variables
 
-# Model
-mod <- lm(# your model formula here
-          , 
-          data = dat,
+# Model Ariana
+mod <- lm(AdjSalePrice ~ SqFtTotLiving + YrBuilt, 
+          data = train,
           na.action = na.omit)
 
 summary(mod)
+
+
+Decade <- list(NULL)
+for (i in seq_along(unique(train$YrBuilt))) {
+  YrBuild[[i]] <- unique(train$YrBuild[train$YrBuild == i])
+}
+
+# Model Marcus
+mod1 <- lm(AdjSalePrice ~ SqFtFinBasement,
+  data = train,
+  na.action = na.omit)
+
+summary(mod1)
+
+ggplot(train, aes(SqFtFinBasement, AdjSalePrice))+
+  geom_point()+
+  geom_smooth(method = "lm")
+
+# Outlier Identification
+par(mfrow = c(2,2))
+plot(mod1)
+
+# Model Natasha 
+mod4 <- lm(AdjSalePrice ~ SqFtTotLiving + BldgGrade + ZipGroup, data = dat)
+
+stargazer(mod4, type = "latex")
 
 ########## do not fill in below the line ###########
 

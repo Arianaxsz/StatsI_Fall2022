@@ -1,0 +1,61 @@
+---
+title: "House_Price Project for King County Assessor"
+output:
+  pdf_document: default
+  html_document: default
+date: "2022-11-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Load any packages here
+library(broom)
+library(ggplot2)
+library(stargazer)
+library(tidyverse)
+library(dplyr)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+# Load training data
+train <- readRDS("data/train.rds")
+dat <- readRDS("data/train.rds")
+```
+
+```{r}
+ZipGroup <- dat$ZipCode 
+
+mod4 <- lm(AdjSalePrice ~ SqFtTotLiving + BldgGrade + ZipGroup, data = train)
+
+summary(mod4)
+
+```
+
+
+## Including Plots
+
+Plots for the first model: 
+
+```{r pressure, echo=FALSE}
+library(ggplot2)
+
+ggplot(data = train, aes(x = SqFtTotLiving, y = AdjSalePrice, group = as.factor(PropertyType)))+
+  geom_point(aes(color = as.factor(PropertyType))) + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Sale price")
+```
+
+Outlier Identification 
+```{r}
+par(mfrow = c(2,2))
+plot(mod4)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
