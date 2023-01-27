@@ -1,0 +1,172 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{graphicx,textcomp}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage[reqno]{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+\usepackage{amssymb,enumerate}
+\usepackage[all]{xy}
+\usepackage{endnotes}
+\usepackage{lscape}
+\newtheorem{com}{Comment}
+\usepackage{float}
+\usepackage{hyperref}
+\newtheorem{lem} {Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{cor}{Corollary}
+\newtheorem{obs}{Observation}
+\usepackage[compact]{titlesec}
+\usepackage{dcolumn}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{multirow}
+\usepackage{xcolor}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\definecolor{light-gray}{gray}{0.65}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+\newcommand{\Sref}[1]{Section~\ref{#1}}
+\newtheorem{hyp}{Hypothesis}
+
+
+\title{Applied Stats I: Exam 2 }
+\date{Due: December 9, 2022}
+\author{Ariana Alves Antunes}
+
+
+\begin{document}
+	\maketitle
+
+	\vspace{.5cm}
+\section*{Question 1}
+\vspace{.5cm}
+\begin{enumerate}
+
+	\item [(a)] Interpret the coefficients for GDP and Democracy.
+	\lstinputlisting[language=R, firstline=22, lastline=23]{exam_code/exam_code.R}  	
+	
+	
+	
+	\item [(b)]The author claims that she ’cannot reject the null hypothesis that GDP has no effect on FDI (H0 : $\beta$GDP = 0) . Using the coefficient estimate and the standard error for GDP construct a 95\% confidence interval for the effect of GDP on FDI. Based on the confidence interval, do you agree with the author? Explain your answer.
+	
+		\lstinputlisting[language=R, firstline=42, lastline=45]{exam_code/exam_code.R}  	
+		
+		Negative association between the FDI of a countries investiment and the GDP number. 
+	
+	\item [(c)] Calculate the difference in predicted FDI between low and high values of Education for non-democratic countries holding GDP constant at its sample mean. Use 24860.42 as the mean of GDP and use +/- one standard deviation around the mean of Education
+	(from 10.96 to 13.02) for low and high values of Education respectively.
+	
+		\lstinputlisting[language=R, firstline=48, lastline=54]{exam_code/exam_code.R}  	
+		
+\end{enumerate}
+
+
+\section*{Question 2}
+\vspace{.5cm}
+
+It could cause bias to different countries, cultures and  factors associated with inequalities, for example GDP and 
+standards of living varying between what wealth is and how are those counted. 
+We could access a bigger study with divided countries and it's estimated, and change the monetary value by GDP. 
+
+
+\section*{Question 3}
+\vspace{.5cm}
+\begin{enumerate}
+	
+	\item [(a)] Correlation between the estimated coefficients as intercept is 0.25(.090), relates to increase of every 0.73 in well depth, and -1.01 distance of 100k to the closest commercial factory. 
+	
+	
+	\item [(b)] Yes, it vary. Additive affects, since the same effect for each well depth. The appropriate test should be reporting the effect sizes and confidence intervals, since these would convey the relative importance and magnitude of the effect. 
+	
+	
+	
+	\item [(c)] 	\lstinputlisting[language=R, firstline=76, lastline=87]{exam_code/exam_code.R}  	
+	
+\end{enumerate}
+
+
+\section*{Question 4}
+\vspace{.5cm}
+\begin{enumerate}
+	
+	\item [(a)] first question 
+	E(y) = -18.1368 + 2.2980 - 4.0716	
+	
+	
+	\item [(b)] second question 
+	
+	E(y) = 2.2980x + 10x  
+	
+	\item [(c)] third question 
+	Ram lambs has the highest Fatness index for every weight, with -4.0716 every 2.29 weight. 
+	
+\end{enumerate}
+
+
+\section*{Question 5}
+\vspace{.5cm}
+\begin{enumerate}
+	
+	\item [(a)] a) Partial F-test : Describes how statistic significant is the regression/model, and test if "variable" is useful in the model at all.The number further from 1 is actually better, but we can check the p-value on the side to check it as well. Larger F values give stronger evidence against Ho. 
+	
+	
+	\item [(b)] Residuals: Also known as the prediction errors, in an observation, the difference between an observed valye and the 
+	predicted value of the response variable, y-y(bar), is called the residual. 
+	
+	
+	
+	\item [(c)] Categorical data/dummy variables: Data that can take only a specific set of values representing a set of possible categories, and dummy variables are used to avoid multicollinearity when doing a regression model. For example we can re code factor data to be used in the regression. 
+		
+	\item [(d)] Constituent term: 
+	
+\end{enumerate}
+
+	\section*{Question 6}
+	\vspace{.5cm}
+	\begin{enumerate}
+		
+		\item [(a)] 2. Additive (salary = age + education) regression model
+		
+		\item [(b)] 1. True
+		
+		\item [(c)] 3. minimize the residual sum of squares
+		
+		\item [(d)] 4. QQ plot of residuals
+		
+	\end{enumerate}
+	
+
+
+\end{document}
